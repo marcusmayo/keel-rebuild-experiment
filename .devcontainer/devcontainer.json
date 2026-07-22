@@ -1,0 +1,11 @@
+{
+  "name": "keel-rebuild-experiment",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "npm install -g @mariozechner/pi-coding-agent agent-browser && agent-browser install",
+  "forwardPorts": [8000],
+  "customizations": {
+    "vscode": {
+      "settings": { "terminal.integrated.defaultProfile.linux": "bash" }
+    }
+  }
+}
