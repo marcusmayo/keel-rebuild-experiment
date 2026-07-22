@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Work Items -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Work Items</h1>
+<p class="subtitle">All {{ items|length }} portfolio items. Items marked unconfirmed are claimed by no source row.</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Title</th><th>Status</th><th>Tracking</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <td class="mono">{{ item.id }}</td>
+      <td>{{ item.title }}</td>
+      <td><span class="pill {{ item.status }}">{{ item.status }}</span></td>
+      <td>
+        {% if item.id in unconfirmed %}
+          <span class="bucket-tag done_gap">unconfirmed</span>
+        {% else %}
+          <span class="muted">confirmed</span>
+        {% endif %}
+      </td>
+      <td><a href="{{ url_for('status_form', item_id=item.id) }}">Change status →</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

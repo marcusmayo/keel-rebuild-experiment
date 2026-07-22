@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Status Changed -- {{ item.id }}{% endblock %}
+{% block content %}
+<h1>Status Changed</h1>
+<div class="panel">
+  <div class="callout ok">
+    <strong>{{ item.id }}</strong> — {{ item.title }}<br>
+    <span class="pill {{ old_status }}">{{ old_status }}</span>
+    <span class="change-arrow">→</span>
+    <span class="pill {{ item.status }}">{{ item.status }}</span>
+  </div>
+  <p class="muted">Applied to <code>state/{{ item.id }}.yaml</code> and recorded in <code>logs/audit.log</code>.</p>
+  <div class="actions">
+    <a class="btn" href="{{ url_for('work_items') }}">Back to work items</a>
+    <a class="btn" href="{{ url_for('dashboard') }}">Dashboard</a>
+  </div>
+</div>
+{% endblock %}

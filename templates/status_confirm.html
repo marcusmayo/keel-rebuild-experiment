@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Confirm Status Change -- {{ item.id }}{% endblock %}
+{% block content %}
+<h1>Confirm Status Change</h1>
+<p class="subtitle">Review the proposal below. The change is applied only when you confirm.</p>
+
+<div class="panel">
+  <h2>{{ item.id }} — {{ item.title }}</h2>
+  <div class="callout warn">
+    <span class="pill {{ item.status }}">{{ item.status }}</span>
+    <span class="change-arrow">→</span>
+    <span class="pill {{ new_status }}">{{ new_status }}</span>
+  </div>
+  <p class="muted">Confirming appends one line to <code>logs/audit.log</code> and updates
+  <code>state/{{ item.id }}.yaml</code>. This is a propose-then-confirm action; it does not delete anything.</p>
+  <form method="post" action="{{ url_for('status_confirm', item_id=item.id) }}">
+    <input type="hidden" name="new_status" value="{{ new_status }}">
+    <div class="actions">
+      <button class="btn btn-primary" type="submit">Confirm and apply</button>
+      <a class="btn" href="{{ url_for('status_form', item_id=item.id) }}">Back</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

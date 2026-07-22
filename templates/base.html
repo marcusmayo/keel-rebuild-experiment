@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Meridian PPM{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% if show_nav %}
+  <div class="topbar">
+    <div class="brand">Meridian PPM <small>portfolio reconciliation</small></div>
+    <nav class="nav">
+      <a href="{{ url_for('dashboard') }}" class="{{ 'active' if active=='dashboard' }}">Dashboard</a>
+      <a href="{{ url_for('work_items') }}" class="{{ 'active' if active=='work_items' }}">Work Items</a>
+      <a href="{{ url_for('review') }}" class="{{ 'active' if active=='review' }}">Review</a>
+      <a href="{{ url_for('export') }}">Export</a>
+      <form method="post" action="{{ url_for('logout') }}" style="display:inline;">
+        <button class="logout-btn" type="submit">Logout</button>
+      </form>
+    </nav>
+  </div>
+  {% endif %}
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

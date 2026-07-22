@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Dashboard -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Reconciliation Dashboard</h1>
+<p class="subtitle">Every source row sorted into exactly one review bucket. {{ total }} rows across two sources.</p>
+
+<div class="hero-grid">
+  {% for bucket, count in hero %}
+  <div class="hero-card {{ bucket }}">
+    <div class="num">{{ count }}</div>
+    <div class="label">{{ bucket }}</div>
+  </div>
+  {% endfor %}
+  <div class="hero-card unconfirmed">
+    <div class="num">{{ unconfirmed_count }}</div>
+    <div class="label">unconfirmed</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Legend</h2>
+  <p class="muted">
+    <span class="bucket-tag changed">changed</span> matched, not done, drifted &nbsp;·&nbsp;
+    <span class="bucket-tag conflict">conflict</span> portfolio done, source active &nbsp;·&nbsp;
+    <span class="bucket-tag completed">completed</span> both done &nbsp;·&nbsp;
+    <span class="bucket-tag duplicate">duplicate</span> target already claimed &nbsp;·&nbsp;
+    <span class="bucket-tag ambiguous">ambiguous</span> held for model &nbsp;·&nbsp;
+    <span class="bucket-tag gap">gap</span> untracked live work &nbsp;·&nbsp;
+    <span class="bucket-tag done_gap">done_gap</span> untracked finished work
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Reconciliation Review -- Meridian PPM{% endblock %}
+{% set descriptions = {
+  'changed': 'matched, portfolio not done, status or title drifted',
+  'gap': 'matches nothing, row is active -- untracked live work',
+  'conflict': 'portfolio claims done, source says still active',
+  'ambiguous': 'no ref, best score between LOW and HIGH -- judged by the model',
+  'duplicate': "best match already claimed by another source row",
+  'completed': 'both sides done, nothing drifted',
+  'done_gap': 'matches nothing, row is done -- finished work never tracked'
+} %}
+{% block content %}
+<h1>Reconciliation Review</h1>
+<p class="subtitle">Every source row grouped by bucket. Semantic verdicts shown inline for the ambiguous bucket.</p>
+
+{% for bucket in bucket_order %}
+{% set rows = grouped.get(bucket, []) %}
+<div class="bucket-group">
+  <div class="bucket-head">
+    <span class="bucket-tag {{ bucket }}">{{ bucket }}</span>
+    <span class="count">{{ counts.get(bucket, 0) }} row{{ '' if counts.get(bucket,0)==1 else 's' }}</span>
+    <span class="bucket-desc">{{ descriptions.get(bucket, '') }}</span>
+  </div>
+  {% if rows %}
+  <table>
+    <thead>
+      <tr>
+        <th>Source</th><th>Ref</th><th>Title</th><th>Status</th>
+        <th>Target</th><th>Score</th>
+        {% if bucket == 'ambiguous' %}<th>Verdict</th><th>Reason</th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td class="mono">{{ r.source }}</td>
+        <td class="mono">{{ r.ref or '—' }}</td>
+        <td>{{ r.title }}</td>
+        <td><span class="pill {{ r.status }}">{{ r.status }}</span></td>
+        <td class="mono">{{ r.target or '—' }}</td>
+        <td class="mono">{{ '%.2f'|format(r.score) if r.score is not none else '—' }}</td>
+        {% if bucket == 'ambiguous' %}
+          {% if r.semantic %}
+            <td><span class="verdict {{ r.semantic.verdict }}">{{ r.semantic.verdict }}</span></td>
+            <td class="reason">{{ r.semantic.reason }}</td>
+          {% else %}
+            <td class="muted">not judged</td>
+            <td class="muted">run the semantic pass</td>
+          {% endif %}
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No rows in this bucket.</p>
+  {% endif %}
+</div>
+{% endfor %}
+
+<div class="bucket-group">
+  <div class="bucket-head">
+    <span class="bucket-tag done_gap">unconfirmed</span>
+    <span class="count">{{ unconfirmed|length }} item{{ '' if unconfirmed|length==1 else 's' }}</span>
+    <span class="bucket-desc">portfolio items no source row claims (a report view, not a bucket)</span>
+  </div>
+  <p class="mono">{{ unconfirmed|join('  ·  ') }}</p>
+</div>
+{% endblock %}

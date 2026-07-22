@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Change Status -- {{ item.id }}{% endblock %}
+{% block content %}
+<h1>Change Status</h1>
+<p class="subtitle">Propose a status change for a work item. Nothing is written until you confirm.</p>
+
+<div class="panel">
+  <h2>{{ item.id }} — {{ item.title }}</h2>
+  <p>Current status: <span class="pill {{ item.status }}">{{ item.status }}</span></p>
+  <form method="post" action="{{ url_for('status_propose', item_id=item.id) }}">
+    <div class="form-row">
+      <label for="new_status">New status</label>
+      <select name="new_status" id="new_status">
+        {% for s in statuses %}
+        <option value="{{ s }}" {{ 'selected' if s == item.status }}>{{ s }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" type="submit">Propose change →</button>
+      <a class="btn" href="{{ url_for('work_items') }}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
