@@ -1,0 +1,265 @@
+{
+  "results": [
+    {
+      "bucket": "changed",
+      "idx": 0,
+      "match_method": "title",
+      "match_score": 1.0,
+      "matched_id": "ML-012",
+      "ref": "",
+      "source": "backlog",
+      "status": "blocked",
+      "title": "Route deviation alerts"
+    },
+    {
+      "bucket": "changed",
+      "idx": 1,
+      "match_method": "title",
+      "match_score": 1.0,
+      "matched_id": "ML-013",
+      "ref": "",
+      "source": "backlog",
+      "status": "done",
+      "title": "Pallet tracking tags"
+    },
+    {
+      "bucket": "changed",
+      "idx": 2,
+      "match_method": "title",
+      "match_score": 1.0,
+      "matched_id": "ML-014",
+      "ref": "",
+      "source": "backlog",
+      "status": "blocked",
+      "title": "Invoice dispute workflow"
+    },
+    {
+      "bucket": "duplicate",
+      "idx": 3,
+      "match_method": "title",
+      "match_score": 1.0,
+      "matched_id": "ML-005",
+      "ref": "",
+      "source": "backlog",
+      "status": "in_progress",
+      "title": "Ops latency dashboard"
+    },
+    {
+      "bucket": "ambiguous",
+      "idx": 4,
+      "match_method": "title_best_effort",
+      "match_score": 0.5,
+      "matched_id": "ML-001",
+      "ref": "",
+      "semantic_reason": "LLM call failed",
+      "semantic_verdict": "ERROR",
+      "source": "backlog",
+      "status": "in_progress",
+      "title": "Autonomous vehicle fleet navigation"
+    },
+    {
+      "bucket": "gap",
+      "idx": 5,
+      "match_method": "title_best_effort",
+      "match_score": 0.3333,
+      "matched_id": null,
+      "ref": "",
+      "source": "backlog",
+      "status": "in_progress",
+      "title": "Quarterly fuel hedging review"
+    },
+    {
+      "bucket": "gap",
+      "idx": 6,
+      "match_method": "none",
+      "match_score": 0.0,
+      "matched_id": null,
+      "ref": "",
+      "source": "backlog",
+      "status": "in_progress",
+      "title": "Trailer telematics retrofit"
+    },
+    {
+      "bucket": "changed",
+      "idx": 7,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-001",
+      "ref": "ML-001",
+      "source": "jira",
+      "status": "blocked",
+      "title": "Autonomous fleet routing optimization"
+    },
+    {
+      "bucket": "changed",
+      "idx": 8,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-002",
+      "ref": "ML-002",
+      "source": "jira",
+      "status": "done",
+      "title": "Driver scheduling engine"
+    },
+    {
+      "bucket": "changed",
+      "idx": 9,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-003",
+      "ref": "ML-003",
+      "source": "jira",
+      "status": "blocked",
+      "title": "Warehouse slotting analytics"
+    },
+    {
+      "bucket": "changed",
+      "idx": 10,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-004",
+      "ref": "ML-004",
+      "source": "jira",
+      "status": "done",
+      "title": "Cold chain temperature monitoring"
+    },
+    {
+      "bucket": "changed",
+      "idx": 11,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-005",
+      "ref": "ML-005",
+      "source": "jira",
+      "status": "blocked",
+      "title": "Ops latency dashboard rollout"
+    },
+    {
+      "bucket": "changed",
+      "idx": 12,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-006",
+      "ref": "ML-006",
+      "source": "jira",
+      "status": "done",
+      "title": "Customs paperwork automation"
+    },
+    {
+      "bucket": "changed",
+      "idx": 13,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-007",
+      "ref": "ML-007",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Carrier rate benchmark refresh"
+    },
+    {
+      "bucket": "changed",
+      "idx": 14,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-008",
+      "ref": "ML-008",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Dock door scheduling v2"
+    },
+    {
+      "bucket": "conflict",
+      "idx": 15,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-016",
+      "ref": "ML-016",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Legacy TMS migration"
+    },
+    {
+      "bucket": "conflict",
+      "idx": 16,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-017",
+      "ref": "ML-017",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Depot wifi upgrade"
+    },
+    {
+      "bucket": "completed",
+      "idx": 17,
+      "match_method": "ref",
+      "match_score": 1.0,
+      "matched_id": "ML-018",
+      "ref": "ML-018",
+      "source": "jira",
+      "status": "done",
+      "title": "Contract renewal archive"
+    },
+    {
+      "bucket": "done_gap",
+      "idx": 18,
+      "match_method": "ref_not_found",
+      "match_score": 0.0,
+      "matched_id": null,
+      "ref": "ML-021",
+      "source": "jira",
+      "status": "done",
+      "title": "Telematics data lake"
+    },
+    {
+      "bucket": "done_gap",
+      "idx": 19,
+      "match_method": "ref_not_found",
+      "match_score": 0.0,
+      "matched_id": null,
+      "ref": "ML-022",
+      "source": "jira",
+      "status": "done",
+      "title": "EDI partner certification"
+    },
+    {
+      "bucket": "gap",
+      "idx": 20,
+      "match_method": "ref_not_found",
+      "match_score": 0.0,
+      "matched_id": null,
+      "ref": "ML-023",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Yard congestion heatmap"
+    },
+    {
+      "bucket": "gap",
+      "idx": 21,
+      "match_method": "ref_not_found",
+      "match_score": 0.0,
+      "matched_id": null,
+      "ref": "ML-024",
+      "source": "jira",
+      "status": "in_progress",
+      "title": "Reverse logistics pilot"
+    }
+  ],
+  "summary": {
+    "ambiguous": 1,
+    "changed": 11,
+    "completed": 1,
+    "conflict": 2,
+    "done_gap": 2,
+    "duplicate": 1,
+    "gap": 4
+  },
+  "unconfirmed": [
+    "ML-009",
+    "ML-010",
+    "ML-011",
+    "ML-015",
+    "ML-019",
+    "ML-020"
+  ]
+}

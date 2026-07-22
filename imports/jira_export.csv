@@ -1,0 +1,16 @@
+ref,title,status
+ML-001,Autonomous fleet routing optimization,blocked
+ML-002,Driver scheduling engine,done
+ML-003,Warehouse slotting analytics,blocked
+ML-004,Cold chain temperature monitoring,done
+ML-005,Ops latency dashboard rollout,blocked
+ML-006,Customs paperwork automation,done
+ML-007,Carrier rate benchmark refresh,in_progress
+ML-008,Dock door scheduling v2,in_progress
+ML-016,Legacy TMS migration,in_progress
+ML-017,Depot wifi upgrade,in_progress
+ML-018,Contract renewal archive,done
+ML-021,Telematics data lake,done
+ML-022,EDI partner certification,done
+ML-023,Yard congestion heatmap,in_progress
+ML-024,Reverse logistics pilot,in_progress
