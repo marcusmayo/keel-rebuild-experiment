@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Dashboard -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<h2>Reconciliation buckets</h2>
+<div class="heros">
+  {% for b in buckets_order %}
+  <div class="hero {{ b }}">
+    <div class="label">{{ b }}</div>
+    <div class="num">{{ summary.buckets.get(b, 0) }}</div>
+  </div>
+  {% endfor %}
+  <div class="hero unconfirmed">
+    <div class="label">unconfirmed</div>
+    <div class="num">{{ summary.unconfirmed_count }}</div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h1>Summary</h1></div>
+  <div class="panel-body">
+    <table>
+      <tr><th>Total source rows</th><td class="num">{{ summary.total }}</td></tr>
+      {% for b in buckets_order %}
+      <tr><th>{{ b }}</th><td class="num">{{ summary.buckets.get(b, 0) }}</td></tr>
+      {% endfor %}
+      <tr><th>unconfirmed portfolio items</th><td class="num">{{ summary.unconfirmed_count }}</td></tr>
+    </table>
+  </div>
+</div>
+<p class="muted">Propose, don't mutate. Status changes require confirmation. <a href="{{ url_for('review') }}">Review reconciliation &rarr;</a></p>
+{% endblock %}

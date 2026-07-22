@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Meridian PPM{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% if session.get('logged_in') %}
+  <header class="topbar">
+    <div class="brand">MERIDIAN <span>PPM</span></div>
+    <nav>
+      <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' }}">Dashboard</a>
+      <a href="{{ url_for('items') }}" class="{{ 'active' if request.endpoint in ('items','item_detail','propose_status','confirm_status') }}">Work Items</a>
+      <a href="{{ url_for('review') }}" class="{{ 'active' if request.endpoint == 'review' }}">Reconciliation</a>
+    </nav>
+    <div class="spacer"></div>
+    <a class="btn" href="{{ url_for('export') }}">Export XLSX</a>
+    <a class="btn secondary" href="{{ url_for('logout') }}">Logout</a>
+  </header>
+  {% endif %}
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for cat, msg in messages %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

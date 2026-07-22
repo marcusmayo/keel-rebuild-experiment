@@ -1,0 +1,10 @@
+{
+  "factors": {
+    "business_value": 8,
+    "job_size": 3,
+    "risk_reduction": 6,
+    "time_criticality": 5
+  },
+  "item": "ML-009",
+  "wsjf": 6.333333333333333
+}

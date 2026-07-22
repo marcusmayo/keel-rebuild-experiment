@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Work Items -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Work Items</h1>
+<h2>Portfolio ({{ items|length }})</h2>
+<div class="panel">
+  <div class="panel-body">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Title</th><th>Status</th><th>WSJF</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for it in items %}
+        <tr>
+          <td><b>{{ it.id }}</b></td>
+          <td>{{ it.title }}</td>
+          <td><span class="tag {{ it.status }}">{{ it.status }}</span></td>
+          <td class="num">{% if it._score %}{{ '%.2f'|format(it._score.wsjf) }}{% else %}—{% endif %}</td>
+          <td><a class="btn secondary" href="{{ url_for('item_detail', item_id=it.id) }}">Open</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

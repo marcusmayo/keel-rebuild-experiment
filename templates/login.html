@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Login -- Meridian PPM{% endblock %}
+{% block content %}
+<form class="login" method="post" autocomplete="off">
+  <h1>Meridian PPM</h1>
+  <p class="muted">Operator access is protected by TOTP.</p>
+  <div class="field">
+    <label for="code">Authenticator code</label>
+    <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code"
+           autofocus required placeholder="000000">
+  </div>
+  <button class="btn" type="submit">Sign in</button>
+</form>
+{% endblock %}

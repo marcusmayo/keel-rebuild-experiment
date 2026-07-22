@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ item.id }} -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>{{ item.id }} &middot; {{ item.title }}</h1>
+<p class="kv">Current status: <b>{{ item.status }}</b></p>
+
+<div class="panel">
+  <div class="panel-head"><h2>Propose a status change</h2></div>
+  <div class="panel-body" style="padding:14px;">
+    <form method="post" action="{{ url_for('propose_status', item_id=item.id) }}">
+      <div class="field">
+        <label for="status">New status</label>
+        <select id="status" name="status">
+          {% for s in statuses %}
+          <option value="{{ s }}" {{ 'selected' if s == item.status }}>{{ s }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="btn" type="submit">Propose change</button>
+      <a class="btn secondary" href="{{ url_for('items') }}">Back</a>
+    </form>
+    <p class="muted" style="margin-top:12px;">No change is applied here. You will be asked to confirm on the next step, and only then is the portfolio updated and an audit line written.</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Confirm change -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Confirm status change</h1>
+<div class="panel">
+  <div class="panel-body" style="padding:14px;">
+    <p class="kv">Item: <b>{{ item.id }}</b> &middot; {{ item.title }}</p>
+    <p class="kv">Current status: <b>{{ item.status }}</b></p>
+    <p class="kv">Proposed new status: <b>{{ new_status }}</b></p>
+    <p class="muted">Nothing has changed yet. Confirm to apply this status to the portfolio YAML and append an audit line.</p>
+    <form method="post" action="{{ url_for('confirm_status', item_id=item.id) }}">
+      <button class="btn" type="submit">Confirm and apply</button>
+      <a class="btn secondary" href="{{ url_for('item_detail', item_id=item.id) }}">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

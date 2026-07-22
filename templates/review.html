@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Reconciliation -- Meridian PPM{% endblock %}
+{% block content %}
+<h1>Reconciliation Review</h1>
+<h2>{{ summary.total }} source rows across {{ buckets_order|length }} buckets</h2>
+
+{% for b in buckets_order %}
+{% set group = by_bucket.get(b, []) %}
+<div class="bucket-group">
+  <h3><span class="tag {{ b }}">{{ b }}</span> &nbsp; {{ group|length }} row{{ '' if group|length == 1 else 's' }}</h3>
+  {% if group %}
+  <div class="panel">
+    <div class="panel-body">
+      <table>
+        <thead>
+          <tr>
+            <th>Source</th><th>Ref</th><th>Title</th><th>Status</th>
+            <th>Target</th><th class="num">Score</th><th>Semantic</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in group %}
+          <tr>
+            <td>{{ r.source }}</td>
+            <td>{{ r.ref or '—' }}</td>
+            <td>{{ r.title }}</td>
+            <td>{{ r.status }}</td>
+            <td>{{ r.match_target or '—' }}{% if r.portfolio_title %} <span class="muted">({{ r.portfolio_title }})</span>{% endif %}</td>
+            <td class="num">{{ '%.3f'|format(r.score) if r.score is not none else '—' }}</td>
+            <td>
+              {% if r.semantic and r.semantic.verdict %}
+                <span class="tag {{ r.semantic.verdict|lower }}">{{ r.semantic.verdict }}</span>
+                <span class="muted">{{ r.semantic.reason }}</span>
+              {% elif r.bucket == 'ambiguous' %}
+                <span class="muted">not judged</span>
+              {% else %}
+                <span class="muted">—</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% else %}
+  <p class="muted">No rows.</p>
+  {% endif %}
+</div>
+{% endfor %}
+
+<div class="panel">
+  <div class="panel-head"><h2>Unconfirmed portfolio items ({{ summary.unconfirmed_count }})</h2></div>
+  <div class="panel-body">
+    <table>
+      <thead><tr><th>ID</th><th>Title</th><th>Status</th></tr></thead>
+      <tbody>
+        {% for pid in summary.unconfirmed %}
+        <tr><td><b>{{ pid }}</b></td><td>—</td><td><span class="muted">not claimed by any source</span></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
