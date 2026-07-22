@@ -1,0 +1,44 @@
+[
+  {
+    "ref": "",
+    "title": "Route deviation alerts",
+    "status": "blocked",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Pallet tracking tags",
+    "status": "done",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Invoice dispute workflow",
+    "status": "blocked",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Ops latency dashboard",
+    "status": "in_progress",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Autonomous vehicle fleet navigation",
+    "status": "in_progress",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Quarterly fuel hedging review",
+    "status": "in_progress",
+    "source": "backlog"
+  },
+  {
+    "ref": "",
+    "title": "Trailer telematics retrofit",
+    "status": "in_progress",
+    "source": "backlog"
+  }
+]

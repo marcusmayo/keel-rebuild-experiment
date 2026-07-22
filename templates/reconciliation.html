@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Meridian PPM -- Reconciliation{% endblock %}
+{% block content %}
+<h2>Reconciliation Review</h2>
+{% for b in order %}
+<h3><span class="bucket">{{ b }}</span> ({{ grouped[b]|length }})</h3>
+{% if grouped[b] %}
+<table>
+  <tr><th>Ref</th><th>Title</th><th>Status</th><th>Source</th><th>Match</th><th>Score</th><th>Verdict</th></tr>
+  {% for r in grouped[b] %}
+  <tr>
+    <td>{{ r.ref or "&mdash;"|safe }}</td>
+    <td>{{ r.title }}</td>
+    <td>{{ r.status }}</td>
+    <td>{{ r.source }}</td>
+    <td>{{ r.match or "" }}</td>
+    <td>{{ "%.2f"|format(r.score) }}</td>
+    <td>{% if r.verdict %}<span class="verdict">{{ r.verdict }}</span>
+        <span class="dim">-- {{ r.reason }}</span>{% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="dim">No rows.</p>
+{% endif %}
+{% endfor %}
+<h3>Unconfirmed portfolio items ({{ summary.unconfirmed|length }})</h3>
+<p>{% for pid in summary.unconfirmed %}<span class="bucket">{{ pid }}</span> {% endfor %}</p>
+{% endblock %}

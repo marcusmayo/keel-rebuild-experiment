@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Meridian PPM -- Login</title>
+<style>
+  body { margin:0; background:#0d1117; color:#e6edf3; display:flex;
+         align-items:center; justify-content:center; height:100vh;
+         font:14px/1.45 ui-monospace, Menlo, Consolas, monospace; }
+  .card { background:#161b22; border:1px solid #30363d; border-radius:8px;
+          padding:32px; width:320px; }
+  h1 { font-size:16px; letter-spacing:2px; margin:0 0 20px; }
+  input { width:100%; background:#0d1117; color:#e6edf3;
+          border:1px solid #30363d; border-radius:6px; padding:8px;
+          font:inherit; font-size:20px; text-align:center;
+          letter-spacing:6px; margin-bottom:14px; }
+  button { width:100%; background:#1f6feb; border:none; color:#fff;
+           border-radius:6px; padding:9px; cursor:pointer; font:inherit; }
+  .error { color:#f85149; margin-top:12px; }
+  .dim { color:#8b949e; font-size:12px; margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>MERIDIAN PPM</h1>
+  <form method="post">
+    <input type="text" name="code" inputmode="numeric" autocomplete="one-time-code"
+           placeholder="------" autofocus>
+    <button type="submit">Authenticate</button>
+  </form>
+  {% if error %}<div class="error">{{ error }}</div>{% endif %}
+  <div class="dim">Enter the 6-digit code from your authenticator.</div>
+</div>
+</body>
+</html>

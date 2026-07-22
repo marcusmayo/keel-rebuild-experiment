@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Meridian PPM -- Dashboard{% endblock %}
+{% block content %}
+<h2>Reconciliation Dashboard</h2>
+{% if not has_data %}
+<p class="dim">No reconcile.json yet -- run the pipeline.</p>
+{% endif %}
+<div class="heroes">
+  <div class="hero changed"><div class="n">{{ counts.changed }}</div><div class="l">Changed</div></div>
+  <div class="hero gap"><div class="n">{{ counts.gap }}</div><div class="l">Gap</div></div>
+  <div class="hero conflict"><div class="n">{{ counts.conflict }}</div><div class="l">Conflict</div></div>
+  <div class="hero ambiguous"><div class="n">{{ counts.ambiguous }}</div><div class="l">Ambiguous</div></div>
+  <div class="hero duplicate"><div class="n">{{ counts.duplicate }}</div><div class="l">Duplicate</div></div>
+  <div class="hero completed"><div class="n">{{ counts.completed }}</div><div class="l">Completed</div></div>
+  <div class="hero done_gap"><div class="n">{{ counts.done_gap }}</div><div class="l">Done Gap</div></div>
+  <div class="hero"><div class="n">{{ unconfirmed }}</div><div class="l">Unconfirmed</div></div>
+</div>
+<p><a class="btn" href="{{ url_for('reconciliation') }}">Review reconciliation</a>
+   <a class="btn" href="{{ url_for('export') }}">Export XLSX</a></p>
+{% endblock %}

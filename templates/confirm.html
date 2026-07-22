@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Meridian PPM -- Confirm{% endblock %}
+{% block content %}
+<h2>Confirm status change</h2>
+<div class="panel">
+  <p><strong>{{ pending.id }}</strong> -- {{ pending.title }}</p>
+  <p>Status: <span class="dim">{{ pending.from }}</span> &rarr;
+     <strong>{{ pending.to }}</strong></p>
+  <form method="post" style="display:flex;gap:10px">
+    <button class="btn-primary" type="submit" name="decision"
+            value="confirm">Confirm change</button>
+    <button type="submit" name="decision" value="cancel">Cancel</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}Meridian PPM{% endblock %}</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --border:#30363d; --fg:#e6edf3;
+          --dim:#8b949e; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922;
+          --bad:#f85149; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:14px/1.45 "SF Mono", ui-monospace, Menlo, Consolas, monospace; }
+  a { color:var(--accent); text-decoration:none; }
+  nav { display:flex; gap:18px; align-items:center; padding:10px 20px;
+        background:var(--panel); border-bottom:1px solid var(--border); }
+  nav .brand { font-weight:700; color:var(--fg); letter-spacing:1px; }
+  nav .spacer { flex:1; }
+  main { padding:20px; max-width:1200px; margin:0 auto; }
+  .heroes { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+            gap:12px; margin:16px 0 24px; }
+  .hero { background:var(--panel); border:1px solid var(--border);
+          border-radius:8px; padding:14px; }
+  .hero .n { font-size:32px; font-weight:700; }
+  .hero .l { color:var(--dim); text-transform:uppercase; font-size:11px;
+             letter-spacing:1px; }
+  .hero.changed .n { color:var(--warn); }
+  .hero.conflict .n, .hero.gap .n { color:var(--bad); }
+  .hero.completed .n, .hero.done_gap .n { color:var(--ok); }
+  .hero.ambiguous .n, .hero.duplicate .n { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; background:var(--panel);
+          border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  th, td { padding:7px 10px; border-bottom:1px solid var(--border);
+           text-align:left; }
+  th { color:var(--dim); text-transform:uppercase; font-size:11px;
+       letter-spacing:1px; }
+  tr:last-child td { border-bottom:none; }
+  .bucket { display:inline-block; padding:1px 8px; border-radius:10px;
+            border:1px solid var(--border); font-size:12px; }
+  h2 { border-bottom:1px solid var(--border); padding-bottom:6px; }
+  h3 { margin:22px 0 8px; }
+  button, .btn { background:#21262d; color:var(--fg);
+                 border:1px solid var(--border); border-radius:6px;
+                 padding:5px 12px; cursor:pointer; font:inherit; }
+  button:hover, .btn:hover { border-color:var(--dim); }
+  .btn-primary { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+  select, input[type=text] { background:#0d1117; color:var(--fg);
+        border:1px solid var(--border); border-radius:6px; padding:5px 8px;
+        font:inherit; }
+  .dim { color:var(--dim); }
+  .error { color:var(--bad); }
+  .panel { background:var(--panel); border:1px solid var(--border);
+           border-radius:8px; padding:18px; }
+  .verdict { color:var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">MERIDIAN PPM</span>
+  <a href="{{ url_for('dashboard') }}">Dashboard</a>
+  <a href="{{ url_for('items') }}">Work Items</a>
+  <a href="{{ url_for('reconciliation') }}">Reconciliation</a>
+  <a href="{{ url_for('export') }}">Export XLSX</a>
+  <span class="spacer"></span>
+  <a href="{{ url_for('logout') }}" class="dim">Logout</a>
+</nav>
+<main>
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>

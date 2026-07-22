@@ -1,0 +1,92 @@
+[
+  {
+    "ref": "ML-001",
+    "title": "Autonomous fleet routing optimization",
+    "status": "blocked",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-002",
+    "title": "Driver scheduling engine",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-003",
+    "title": "Warehouse slotting analytics",
+    "status": "blocked",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-004",
+    "title": "Cold chain temperature monitoring",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-005",
+    "title": "Ops latency dashboard rollout",
+    "status": "blocked",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-006",
+    "title": "Customs paperwork automation",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-007",
+    "title": "Carrier rate benchmark refresh",
+    "status": "in_progress",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-008",
+    "title": "Dock door scheduling v2",
+    "status": "in_progress",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-016",
+    "title": "Legacy TMS migration",
+    "status": "in_progress",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-017",
+    "title": "Depot wifi upgrade",
+    "status": "in_progress",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-018",
+    "title": "Contract renewal archive",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-021",
+    "title": "Telematics data lake",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-022",
+    "title": "EDI partner certification",
+    "status": "done",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-023",
+    "title": "Yard congestion heatmap",
+    "status": "in_progress",
+    "source": "jira"
+  },
+  {
+    "ref": "ML-024",
+    "title": "Reverse logistics pilot",
+    "status": "in_progress",
+    "source": "jira"
+  }
+]

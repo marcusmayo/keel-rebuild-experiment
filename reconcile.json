@@ -1,0 +1,224 @@
+{
+  "summary": {
+    "buckets": {
+      "changed": 11,
+      "conflict": 2,
+      "completed": 1,
+      "duplicate": 1,
+      "ambiguous": 1,
+      "gap": 4,
+      "done_gap": 2
+    },
+    "total": 22,
+    "unconfirmed": [
+      "ML-009",
+      "ML-010",
+      "ML-011",
+      "ML-015",
+      "ML-019",
+      "ML-020"
+    ]
+  },
+  "rows": [
+    {
+      "ref": "ML-001",
+      "title": "Autonomous fleet routing optimization",
+      "status": "blocked",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-001",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-002",
+      "title": "Driver scheduling engine",
+      "status": "done",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-002",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-003",
+      "title": "Warehouse slotting analytics",
+      "status": "blocked",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-003",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-004",
+      "title": "Cold chain temperature monitoring",
+      "status": "done",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-004",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-005",
+      "title": "Ops latency dashboard rollout",
+      "status": "blocked",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-005",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-006",
+      "title": "Customs paperwork automation",
+      "status": "done",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-006",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-007",
+      "title": "Carrier rate benchmark refresh",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-007",
+      "score": 0.6667
+    },
+    {
+      "ref": "ML-008",
+      "title": "Dock door scheduling v2",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "changed",
+      "match": "ML-008",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-016",
+      "title": "Legacy TMS migration",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "conflict",
+      "match": "ML-016",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-017",
+      "title": "Depot wifi upgrade",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "conflict",
+      "match": "ML-017",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-018",
+      "title": "Contract renewal archive",
+      "status": "done",
+      "source": "jira",
+      "bucket": "completed",
+      "match": "ML-018",
+      "score": 1.0
+    },
+    {
+      "ref": "ML-021",
+      "title": "Telematics data lake",
+      "status": "done",
+      "source": "jira",
+      "bucket": "done_gap",
+      "match": null,
+      "score": 0.0
+    },
+    {
+      "ref": "ML-022",
+      "title": "EDI partner certification",
+      "status": "done",
+      "source": "jira",
+      "bucket": "done_gap",
+      "match": null,
+      "score": 0.0
+    },
+    {
+      "ref": "ML-023",
+      "title": "Yard congestion heatmap",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "gap",
+      "match": null,
+      "score": 0.0
+    },
+    {
+      "ref": "ML-024",
+      "title": "Reverse logistics pilot",
+      "status": "in_progress",
+      "source": "jira",
+      "bucket": "gap",
+      "match": null,
+      "score": 0.0
+    },
+    {
+      "ref": "",
+      "title": "Route deviation alerts",
+      "status": "blocked",
+      "source": "backlog",
+      "bucket": "changed",
+      "match": "ML-012",
+      "score": 1.0
+    },
+    {
+      "ref": "",
+      "title": "Pallet tracking tags",
+      "status": "done",
+      "source": "backlog",
+      "bucket": "changed",
+      "match": "ML-013",
+      "score": 1.0
+    },
+    {
+      "ref": "",
+      "title": "Invoice dispute workflow",
+      "status": "blocked",
+      "source": "backlog",
+      "bucket": "changed",
+      "match": "ML-014",
+      "score": 1.0
+    },
+    {
+      "ref": "",
+      "title": "Ops latency dashboard",
+      "status": "in_progress",
+      "source": "backlog",
+      "bucket": "duplicate",
+      "match": "ML-005",
+      "score": 1.0
+    },
+    {
+      "ref": "",
+      "title": "Autonomous vehicle fleet navigation",
+      "status": "in_progress",
+      "source": "backlog",
+      "bucket": "ambiguous",
+      "match": "ML-001",
+      "score": 0.5,
+      "verdict": "DISTINCT",
+      "reason": "They share the autonomous-fleet theme and status, but routing optimization is a narrower/different scope than vehicle fleet navigation and there is no matching identifier."
+    },
+    {
+      "ref": "",
+      "title": "Quarterly fuel hedging review",
+      "status": "in_progress",
+      "source": "backlog",
+      "bucket": "gap",
+      "match": null,
+      "score": 0.3333
+    },
+    {
+      "ref": "",
+      "title": "Trailer telematics retrofit",
+      "status": "in_progress",
+      "source": "backlog",
+      "bucket": "gap",
+      "match": null,
+      "score": 0.0
+    }
+  ]
+}

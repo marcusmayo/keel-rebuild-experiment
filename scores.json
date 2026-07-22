@@ -1,0 +1,14 @@
+{
+  "ML-009": {
+    "factors": {
+      "business_value": 7,
+      "job_size": 4,
+      "risk_reduction": 5,
+      "time_criticality": 4
+    },
+    "id": "ML-009",
+    "model": "llm",
+    "title": "Fuel consumption reporting",
+    "wsjf": 4.0
+  }
+}
