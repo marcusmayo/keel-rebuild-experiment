@@ -1,0 +1,2 @@
+{"timestamp": "2026-07-22T15:33:44.193883Z", "action": "propose", "details": {"item_id": "ML-001", "title": "Autonomous fleet routing optimization", "current_status": "in_progress", "proposed_status": "blocked", "proposed_at": "2026-07-22T15:33:44.193526Z"}}
+{"timestamp": "2026-07-22T15:33:58.144201Z", "action": "confirm", "details": {"item_id": "ML-001", "old_status": "in_progress", "new_status": "blocked"}}

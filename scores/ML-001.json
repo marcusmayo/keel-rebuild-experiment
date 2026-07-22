@@ -1,0 +1,12 @@
+{
+  "item_id": "ML-001",
+  "title": "Autonomous fleet routing optimization",
+  "factors": {
+    "business_value": 9.0,
+    "time_criticality": 8.0,
+    "risk_reduction": 7.0,
+    "job_size": 8.0
+  },
+  "wsjf_score": 3.0,
+  "wsjf_formula": "(9.0 + 8.0 + 7.0) / 8.0"
+}
