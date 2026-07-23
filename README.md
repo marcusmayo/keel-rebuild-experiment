@@ -16,7 +16,7 @@ maximum), the identical Meridian brief.
 
 | Model | Oracle | Semantic verdict | Propose -> confirm -> audit | Cost (OpenRouter) | Wall time |
 |---|---|---|---|---|---|
-| DeepSeek V4 Pro | ALL PASS (44/44) | SAME | full chain | $0.276 | ~15 min |
+| DeepSeek V4 Pro | ALL PASS (44/44) | SAME | full chain | $0.279 | ~15 min |
 | GLM 5.2 | ALL PASS | DISTINCT | full chain | $0.98 | ~30 min |
 | Kimi K3 | ALL PASS (23/23) | DISTINCT | full chain | $1.00 | ~20 min |
 | Claude Opus 4.8 | ALL PASS (33/33) | DISTINCT | full chain | $6.09 | ~26 min |
